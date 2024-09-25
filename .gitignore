@@ -1,0 +1,17 @@
+# Node.js (React.js) dependencies and build
+erp/node_modules/
+erp/build/
+erp/.env
+
+# Java (Spring Boot) dependencies and build
+backerp/target/
+backerp/.mvn/
+backerp/.idea/
+*.log
+
+# Other common ignores
+.DS_Store
+*.class
+*.jar
+*.war
+*.iml
