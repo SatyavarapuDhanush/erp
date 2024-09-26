@@ -5,7 +5,7 @@ import backend.backerp.Model.UserModel;
 
 public interface UserInterface {
     public ArrayList<UserModel> getallusers();
-    public UserModel PostUser(UserModel newUser);
-   // public boolean login(int userid,String password);
+    public UserModel postUser(UserModel newUser);
+   public boolean login(int userid,String password);
 
 }

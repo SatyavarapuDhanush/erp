@@ -23,18 +23,18 @@ public class UserService implements UserInterface {
     }
 
     @Override
-    public UserModel PostUser(UserModel newUser) {
+    public UserModel postUser(UserModel newUser) {
     UserModel user = UJR.save(newUser);
     return user;
     }
 
-   /*  @Override
-    public boolean login(int userid, String password) {
-    UserModel user=UJR.findByUserId(userid);
+    @Override
+    public boolean login(int id, String password) {
+    UserModel user=UJR.findById(id);
     if(user!=null){
         return  password.equals(user.getPassword());
     }
-    System.out.println(userid+"user not found");
+    System.out.println(id+"user not found");
     return false;
-    } */
+    }  
 }

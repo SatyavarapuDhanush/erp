@@ -2,17 +2,22 @@ package backend.backerp.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="users")
+@Table(name="USERS")
 public class UserModel {
 
 public UserModel() {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_sequence_generator")
+    @SequenceGenerator(name = "user_id_sequence_generator", sequenceName = "user_id_sequence", allocationSize = 1)  
     @Column(name="userid")
     private int id;
     
