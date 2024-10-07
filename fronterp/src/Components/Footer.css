@@ -1,0 +1,25 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background-color: #3a4756;
+    z-index: 1; /* Ensures it does not overlap content */
+  }
+  .footer h2{
+    color: white;
+    font-size: 15px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 50vh;
+  }
+  
+  .main-content {
+    padding-bottom: 60px; /* Adjust based on footer height to prevent overlap */
+  }
+  

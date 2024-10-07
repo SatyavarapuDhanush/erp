@@ -1,7 +1,6 @@
 package backend.backerp.Controller;
 
 import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.backerp.Model.UserModel;
 import backend.backerp.Service.UserService;
+import backend.backerp.dto.LoginRequest;
 
 @RestController
 @CrossOrigin
@@ -34,17 +34,30 @@ public class UserContoller {
     public ArrayList<UserModel> getusers(){
         return us.getallusers();
     }
-
+    
     @PostMapping("/users/post")
     public ResponseEntity<UserModel> createuser(@RequestBody UserModel newUser){
     UserModel user=us.postUser(newUser);
     return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
 
-    @GetMapping("users/login")
-    public boolean login(@RequestParam int id,@RequestParam String password){
-        return us.login(id, password);
-    } 
+    @PostMapping("users/login")
+    public boolean login(@RequestBody LoginRequest loginRequest) {
+        System.out.println("Login attempt for ID: " + loginRequest.getId()); // Log login attempt
+        boolean isLoggedIn = us.login(loginRequest.getId(), loginRequest.getPassword());
+        
+        // Log the result of the login attempt
+        if (isLoggedIn) {
+            System.out.println("Login successful for ID: " + loginRequest.getId());
+        } else {
+            System.out.println("Login failed for ID: " + loginRequest.getId());
+        }
+        
+        return isLoggedIn;
+    }
+    
+
+
   
 
 }

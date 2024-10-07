@@ -29,12 +29,14 @@ public class UserService implements UserInterface {
     }
 
     @Override
-    public boolean login(int id, String password) {
-    UserModel user=UJR.findById(id);
-    if(user!=null){
-        return  password.equals(user.getPassword());
+public boolean login(int id, String password) {
+    UserModel user = UJR.findById(id);
+    if (user != null) {
+        System.out.println("User found: " + user.getName());
+        return password.equals(user.getPassword());
     }
-    System.out.println(id+"user not found");
+    System.out.println("User not found for id: " + id);
     return false;
-    }  
+}
+
 }
