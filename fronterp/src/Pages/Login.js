@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import axios
+import axios from 'axios'; 
 import { toast,ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [user, setUser] = useState({ id: "", password: "" });
   const [isLogin, setIsLogin] = useState(false);
-  const [loading, setLoading] = useState(false); // Loading state
-
+  const [loading, setLoading] = useState(false); 
+  const Navigate = useNavigate();
   const userlogin = async () => {
     setLoading(true);
     console.log("Logging in with ID:", user.id, "and Password:", user.password); // Log user credentials
@@ -20,14 +21,15 @@ const Login = () => {
         });
 
         const data = response.data;
-        if (!response.ok) {
+        if (!response) {
             throw new Error(data.message || 'Failed to login');
         }
         setIsLogin(data.success);
         toast.success('Login successful!');
         setUser({ id: "", password: "" });
+        Navigate('/home');
     } catch (error) {
-        console.error("Error during login:", error); // Log error details
+        console.error("Error during login:", error); 
         toast.error(`Error: ${error.message}`, { icon: false });
     } finally {
         setLoading(false);
