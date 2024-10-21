@@ -5,6 +5,9 @@ import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Header from './Components/Header';
 import Courses from './Pages/Courses';
+import Homenav from './Components/Homenav';
+import Footer from './Components/Footer';
+import Exams from './Pages/Exam/Exams';
 
 function App() {
   return (
@@ -16,6 +19,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/header" element={<Header/>}/>
           <Route path="/courses" element={<Courses/>}/>
+          <Route path="/nav" element={<Homenav />} />
+          <Route path="/header" element={<Header />} />
+          <Route path="/footer" element={<Footer/>}/>
+          <Route path="/exams" element={<Exams/>}/>
         </Routes>
       </BrowserRouter>
     </div>

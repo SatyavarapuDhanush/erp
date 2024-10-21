@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
-import { toast,ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
   const [user, setUser] = useState({ id: "", password: "" });
   const [isLogin, setIsLogin] = useState(false);
   const [loading, setLoading] = useState(false); 
   const Navigate = useNavigate();
+
   const userlogin = async () => {
     setLoading(true);
-    console.log("Logging in with ID:", user.id, "and Password:", user.password); // Log user credentials
+    console.log("Logging in with ID:", user.id, "and Password:", user.password);
     try {
         const response = await axios.post('http://localhost:8080/users/login', {
             id: user.id,
@@ -19,7 +22,6 @@ const Login = () => {
         }, {
             headers: { 'Content-Type': 'application/json' }
         });
-
         const data = response.data;
         if (!response) {
             throw new Error(data.message || 'Failed to login');
@@ -36,11 +38,9 @@ const Login = () => {
     }
 };
 
-
-  
   const validate = () => {
     if (!user.id || !user.password) {
-      toast.warn('Please complete all fields'); // Use toast instead of alert
+      toast.warn('Please complete all fields');
       return false;
     }
     return true;
@@ -59,9 +59,9 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="form-card"> 
       <form onSubmit={submit}>
-        <h1>Login</h1>
+        <h1>SIGN IN</h1>
         <label>UserId:</label>
         <input
           type="text"
@@ -78,12 +78,13 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit" disabled={loading}>
+        <center><button type="submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
-        </button>
+        </button></center>
       </form>
+      <Link to="/signup">Signup</Link>
       {isLogin && <p>Login successful!</p>}
-      <ToastContainer /> {/* This will show toasts */}
+      <ToastContainer />
     </div>
   );
 };

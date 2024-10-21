@@ -1,0 +1,40 @@
+/* Signup.css */
+.form-card {
+    max-width: 400px; /* Set max width for the form card */
+    margin: auto; /* Center the card */
+    padding: 20px; /* Add padding */
+    border-radius: 8px; /* Round the corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    background-color: #fff; /* Background color */
+  }
+  
+  form {
+    display: flex; /* Flexbox for form layout */
+    flex-direction: column; /* Vertical layout */
+  }
+  
+  label {
+    margin-bottom: 5px; /* Space between label and input */
+  }
+  
+  input {
+    margin-bottom: 15px; /* Space between inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 4px; /* Round input corners */
+  }
+  
+  button {
+    padding: 10px; /* Button padding */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Round button corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+    
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker button on hover */
+  }
+  

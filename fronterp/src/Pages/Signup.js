@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import './Signup.css'; // Import the CSS file for styling
 
 const Signup = () => {
   const [user, setUser] = useState({ name: '', email: '', password: '' });
@@ -12,7 +13,6 @@ const Signup = () => {
         body: JSON.stringify(user),
       });
       
-   
       const data = await response.json(); 
       
       if (!response.ok) {
@@ -24,12 +24,11 @@ const Signup = () => {
     } catch (error) {
       toast.error(`Error: ${error.message}`, { icon: false });
     }
-};
-
+  };
 
   const validate = () => {
     if (!user.name || !user.email || !user.password) {
-      alert('Complete all the fields');
+      toast.warn('Complete all the fields');
       return false;
     }
     return true;
@@ -48,7 +47,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="form-card"> 
       <form onSubmit={submit}>
         <h1>SIGN UP</h1>
         <div>
@@ -58,6 +57,7 @@ const Signup = () => {
             name="name"
             value={user.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -67,6 +67,7 @@ const Signup = () => {
             name="email"
             value={user.email}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -76,9 +77,10 @@ const Signup = () => {
             name="password"
             value={user.password}
             onChange={handleChange}
+            required
           />
         </div>
-        <button type="submit">Sign Up</button>
+        <center><button type="submit">Sign Up</button></center>
       </form>
       <ToastContainer />
     </div>

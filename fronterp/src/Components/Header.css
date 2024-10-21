@@ -1,10 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .header-container {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0; 
+  width: 100%; 
+  background-color: #3a4756;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
-  padding: 10px 20px; 
-  background-color: #3a4756; 
-  height: 60px; 
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+  
 }
 
 .logo {
@@ -13,6 +25,7 @@
 }
 
 .header-right {
+  margin-right: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,8 +34,7 @@
 
 .profile, .logout {
   margin: 0;
-  padding: 5px 0; 
+  padding: 7px 0;
   font-size: 16px;
-  color: #ffffff; 
+  color: #ffffff;
 }
-

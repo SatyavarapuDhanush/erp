@@ -3,6 +3,7 @@ import logo from '../Assests/logo.png';
 import Homenav from '../Components/Homenav';
 import Header from '../Components/Header';
 import CoursesList from '../Pages/CoursesList';
+import Footer from '../Components/Footer'; 
 import './Courses.css';
 
 const Courses = () => {
@@ -16,14 +17,15 @@ const Courses = () => {
   ];
 
   return (
-    <div>
-      <Header />
     <div className="courses-page">
-      <Homenav />
+      <Header />
       <div className="main-content">
+        <div className="sidebar">
+          <Homenav /> 
+        </div>
         <CoursesList courses={course} />
       </div>
-    </div>
+      <Footer /> 
     </div>
   );
 };

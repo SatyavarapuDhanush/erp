@@ -1,12 +1,49 @@
+html, body {
+  height: 100%; /* Ensure full height for body and html */
+  margin: 0; /* Remove default margin */
+}
 
 .courses-page {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .main-content {
-    width: 80%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
+  display: flex;
+  flex-direction: column; /* Align children vertically (header, main content, footer) */
+  height: 100vh; /* Full viewport height */
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Allow the main content to grow and fill available space */
+  padding: 0px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 900px; /* Width of the navigation bar */
+  padding: 20px;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap; /* Wrap the course cards in rows */
+  gap: 20px; /* Space between course cards */
+  padding-left: 20px; /* Ensure there's space from the navbar */
+  flex: 1; /* Take up the remaining horizontal space */
+  justify-content: flex-start; /* Align the cards to the start */
+  align-items: flex-start; /* Align cards to the top */
+}
+
+.course-card {
+  width: 150px; /* Adjust based on how wide you want the cards */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  padding: 10px;
+  background-color: #3a4756;
+  color: #fff;
+  text-align: center;
+}
