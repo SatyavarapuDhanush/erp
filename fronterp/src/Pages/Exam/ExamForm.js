@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ExamService from '../../Service/ExamService';
 
 const ExamForm = ({ exam, refreshExams }) => {
-  const [examData, setExamData] = useState({ name: '', date: '', duration: '' });
+  const [examData, setExamData] = useState({ examname: '', date: '', duration: '' });
 
   useEffect(() => {
     if (exam) {
@@ -18,7 +18,7 @@ const ExamForm = ({ exam, refreshExams }) => {
       await ExamService.createExam(examData);
     }
     refreshExams();
-    setExamData({ name: '', date: '', duration: '' });
+    setExamData({ examname: '', date: '', duration: '' });
   };
 
   const handleChange = (e) => {
@@ -34,8 +34,8 @@ const ExamForm = ({ exam, refreshExams }) => {
         <label>Name of Exam:</label>
         <input
           type="text"
-          name="name"
-          value={examData.name}
+          name="examname"
+          value={examData.examname}
           onChange={handleChange}
         />
         <label>Date:</label>

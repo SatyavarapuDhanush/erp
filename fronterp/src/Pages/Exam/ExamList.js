@@ -10,10 +10,10 @@ const ExamList = ({ exams, onEdit, onDelete }) => {
       <h3>Exam List</h3>
       <ul>
         {exams.map((exam) => (
-          <li key={exam.id}>
-            {exam.name} - {exam.date} - {exam.duration} minutes
+          <li key={exam.examid}>
+            {exam.examname} - {exam.date} - {exam.duration} minutes
             <button onClick={() => onEdit(exam)}>Update</button>
-            <button onClick={() => onDelete(exam.id)}>Delete</button>
+            <button onClick={() => onDelete(exam.examid)}>Delete</button>
           </li>
         ))}
       </ul>

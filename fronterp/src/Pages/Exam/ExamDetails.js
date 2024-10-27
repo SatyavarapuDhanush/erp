@@ -6,7 +6,7 @@ const ExamDetails = ({exam}) => {
         <h3>Exam Details</h3>
       {exam? (
         <div>
-      <h3><strong>Name of exam:</strong> {exam.name}</h3>
+      <h3><strong>Name of exam:</strong> {exam.examname}</h3>
       <h3><strong>Date:</strong> {exam.date}</h3>
       <h3><strong>Duration:</strong>{exam.duration}</h3>
       </div>
