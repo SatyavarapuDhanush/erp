@@ -1,11 +1,12 @@
 package backend.backerp.Controller;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import backend.backerp.Model.ExamModel;
 import backend.backerp.Service.ExamService;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -43,4 +44,10 @@ public class ExamController {
     public void delete(@PathVariable Long id) {
         es.deleteExam(id);
     }
+
+    @PostMapping("/assignedstudents/{examId}")
+    public ExamModel assignedStudentsToExam(@PathVariable Long examId,@RequestBody List<Integer> studentIds) {
+        return es.assignedStudents(examId,studentIds);
+    }
+    
 }

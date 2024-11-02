@@ -52,10 +52,23 @@ const deleteExam = async (id) => {
     }
 };
 
+const assignStudentsToExam=async(examId,studentIds)=>{
+    try{
+    const response=await axios.post(`${base_URL}/assignedstudents/${examId}`,studentIds);
+    return response.data;
+    }
+    catch(error){
+        console.log(error);
+        throw error;
+    }
+};
+
+
 export default {
     getExams,
     getExam,
     createExam,
     updateExam,
     deleteExam,
+    assignStudentsToExam,
 };

@@ -45,8 +45,6 @@ public class UserContoller {
     public boolean login(@RequestBody LoginRequest loginRequest) {
         System.out.println("Login attempt for ID: " + loginRequest.getId()); // Log login attempt
         boolean isLoggedIn = us.login(loginRequest.getId(), loginRequest.getPassword());
-        
-        // Log the result of the login attempt
         if (isLoggedIn) {
             System.out.println("Login successful for ID: " + loginRequest.getId());
         } else {

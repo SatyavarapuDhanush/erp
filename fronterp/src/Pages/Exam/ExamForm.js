@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ExamService from '../../Service/ExamService';
+import './ExamForm.css';
 
 const ExamForm = ({ exam, refreshExams }) => {
   const [examData, setExamData] = useState({ examname: '', date: '', duration: '' });
@@ -29,7 +30,7 @@ const ExamForm = ({ exam, refreshExams }) => {
   };
 
   return (
-    <div>
+    <div className="exam-form-container">
       <form onSubmit={handleSubmit}>
         <label>Name of Exam:</label>
         <input
@@ -49,6 +50,7 @@ const ExamForm = ({ exam, refreshExams }) => {
         <input
           type="text"
           name="duration"
+          placeholder="in minutes"
           value={examData.duration}
           onChange={handleChange}
         />

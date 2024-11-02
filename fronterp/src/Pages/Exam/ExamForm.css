@@ -1,0 +1,63 @@
+/* ExamForm.css */
+
+.exam-form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .exam-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .exam-form-container label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .exam-form-container input[type="text"],
+  .exam-form-container input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .exam-form-container input[type="text"]:focus,
+  .exam-form-container input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  .exam-form-container button {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .exam-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .exam-form-container button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5);
+  }
+  

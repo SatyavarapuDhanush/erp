@@ -1,10 +1,14 @@
 package backend.backerp.Model;
 
+import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,8 +28,32 @@ public class ExamModel {
     @Column(name="duration")
     private String duration;
 
+    @ManyToMany
+    @JoinTable(
+        name = "exam_students",
+        joinColumns = @JoinColumn(name = "exam_id"),
+        inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private List<UserModel> assignedStudents;
+
+    public List<UserModel> getAssignedStudents() {
+        return assignedStudents;
+    }
+
+    public void setAssignedStudents(List<UserModel> assignedStudents) {
+        this.assignedStudents = assignedStudents;
+    }
+
     public Long getExamid() {
         return examid;
+    }
+
+    public ExamModel(Long examid, String examname, String date, String duration, List<UserModel> assignedStudents) {
+        this.examid = examid;
+        this.examname = examname;
+        this.date = date;
+        this.duration = duration;
+        this.assignedStudents = assignedStudents;
     }
 
     public void setExamid(Long examid) {

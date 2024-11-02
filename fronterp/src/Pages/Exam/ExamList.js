@@ -1,4 +1,5 @@
 import React from 'react';
+import './ExamList.css';
 
 const ExamList = ({ exams, onEdit, onDelete }) => {
   if (!exams || exams.length === 0) {
@@ -6,14 +7,18 @@ const ExamList = ({ exams, onEdit, onDelete }) => {
   }
 
   return (
-    <div>
+    <div className="exam-list-container">
       <h3>Exam List</h3>
-      <ul>
+      <ul className="exam-list">
         {exams.map((exam) => (
           <li key={exam.examid}>
-            {exam.examname} - {exam.date} - {exam.duration} minutes
-            <button onClick={() => onEdit(exam)}>Update</button>
-            <button onClick={() => onDelete(exam.examid)}>Delete</button>
+            <span className="exam-details">
+              {exam.examname} - {exam.date} - {exam.duration} minutes
+            </span>
+            <div className="exam-actions">
+              <button onClick={() => onEdit(exam)}>Update</button>
+              <button onClick={() => onDelete(exam.examid)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>

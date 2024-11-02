@@ -1,0 +1,70 @@
+/* ExamList.css */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .exam-list-container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .exam-list-container h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .exam-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .exam-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .exam-list li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .exam-details {
+    flex: 1;
+  }
+  
+  .exam-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .exam-actions button {
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .exam-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .exam-actions button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5);
+  }
+  
